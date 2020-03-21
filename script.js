@@ -7,6 +7,7 @@ function inputLength() {
 	return input.value.length;
 }
 
+//create a new list item
 function createListElement() {
 	var li = document.createElement("li");
 	ul.insertAdjacentHTML('beforeend', '<li>' + input.value + '<button class="delbutton">Delete</button></li>');
@@ -25,6 +26,7 @@ function addListAfterKeypress(event) {
 	}
 }
 
+//click on a list item and it strikes through the text
 function toggleDone(e) {	
 	if(e.target && e.target.nodeName == "LI") {
 		e.target.classList.toggle("done");
@@ -32,6 +34,7 @@ function toggleDone(e) {
 		
 }
 
+//click the delete button to remove the list item
 function deleteListItem(e) {
 	if(e.target.classList.contains('delbutton')) {
 		ul.removeChild(e.target.parentElement);
